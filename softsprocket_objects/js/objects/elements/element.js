@@ -1,12 +1,20 @@
-
-export class DOMElementWrapper {
+export class HTMLElementWrapper {
     constructor(tagName) {
         if (!tagName || typeof tagName !== 'string') {
             throw new Error('A valid HTML tag name must be provided.');
         }
 
-        // Create a new DOM element with the specified tag name
+        // Create a new HTMLElement with the specified tag name
         this._element = document.createElement(tagName);
+
+        if (!(this._element instanceof HTMLElement)) {
+            throw new Error('Failed to create a valid HTMLElement.');
+        }
+    }
+
+    // Getter for the _element property
+    get element() {
+        return this._element;
     }
 
     // Getter for the innerText property
@@ -37,6 +45,16 @@ export class DOMElementWrapper {
     // Setter for the className property
     set className(value) {
         this._element.className = value;
+    }
+
+    // Getter for the id property
+    get id() {
+        return this._element.id;
+    }
+
+    // Setter for the id property
+    set id(value) {
+        this._element.id = value;
     }
 
     // Example instance method: Add a class to the element
@@ -82,14 +100,19 @@ export class DOMElementWrapper {
     getAttribute(name) {
         return this._element.getAttribute(name);
     }
+
+    // Example instance method: Remove an attribute from the element
+    removeAttribute(name) {
+        this._element.removeAttribute(name);
+    }
 }
 
 // Example usage
 /*
-const wrapper = new DOMElementWrapper('div');
-wrapper.innerText = 'Hello, World!'; // Set innerText
-wrapper.className = 'my-class'; // Set className
-wrapper.addClass('another-class'); // Add a class
-wrapper.setAttribute('id', 'myElement'); // Set an attribute
-document.body.appendChild(wrapper._element); // Append the element to the body
+const htmlWrapper = new HTMLElementWrapper('div');
+htmlWrapper.innerText = 'Hello, HTMLElement!'; // Set innerText
+htmlWrapper.className = 'my-class'; // Set className
+htmlWrapper.addClass('another-class'); // Add a class
+htmlWrapper.setAttribute('data-role', 'example'); // Set an attribute
+htmlWrapper.appendTo(document.body); // Append the element to the body
 */
