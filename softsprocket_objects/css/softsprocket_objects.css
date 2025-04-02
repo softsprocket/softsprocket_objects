@@ -1,0 +1,113 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Grid System */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -0.5rem;
+}
+
+.col {
+    flex: 1 1 100%;
+    padding: 0.5rem;
+}
+
+.col-6 {
+    flex: 1 1 50%;
+}
+
+.col-4 {
+    flex: 1 1 33.33%;
+}
+
+.col-3 {
+    flex: 1 1 25%;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, sans-serif;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 0.25rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Images */
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Media Queries for Larger Screens */
+@media (min-width: 768px) {
+    .col-6 {
+        flex: 1 1 50%;
+    }
+
+    .col-4 {
+        flex: 1 1 33.33%;
+    }
+
+    .col-3 {
+        flex: 1 1 25%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 2rem;
+    }
+}
